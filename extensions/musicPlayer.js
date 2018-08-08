@@ -53,6 +53,9 @@ class musicPlayer {
     addSong(song, songName = "No name", msg = undefined) {
         
         if(!this.voiceChannel || !this.connection) {
+            if(msg) {
+                this.joinChannel(msg);
+            }
             return this.sendMessage(msg, "Not currently in a voice channel");
         }
 

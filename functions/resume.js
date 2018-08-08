@@ -8,6 +8,9 @@ class resume extends bFunction {
     argsList() {
         return "None";
     }
+    descrip() {
+        return "Attempts to resume music";
+    }
 }
 
 module.exports = resume;

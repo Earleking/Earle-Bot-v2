@@ -7,7 +7,10 @@ class bFunction {
         return "Not yet implemented";
     }
     argsList() {
-        return "";
+        return "Unspecified";
+    }
+    descrip() {
+        return "No description added";
     }
 }
 

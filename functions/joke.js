@@ -33,8 +33,11 @@ class joke extends bFunction {
             
         });
     }
-    args() {
-        return "<number of jokes>"
+    argsList() {
+        return "(number of jokes to tell)"
+    }
+    descrip() {
+        return "Tells a joke from /r/jokes";
     }
 }
 

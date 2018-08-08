@@ -7,6 +7,9 @@ class banish extends bFunction {
     argsList() {
         return "None";
     }
+    descrip() {
+        return "Removes the bot from the current voice channel";
+    }
 }
 
 module.exports = banish;

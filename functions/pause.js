@@ -8,6 +8,9 @@ class pause extends bFunction {
     argsList() {
         return "None";
     }
+    descrip() {
+        return "Attempts to pause music";
+    }
 }
 
 module.exports = pause;

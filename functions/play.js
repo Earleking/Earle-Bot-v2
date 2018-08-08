@@ -91,6 +91,10 @@ class play extends bFunction {
     argsList() {
         return "<songName or songLink>";
     }
+
+    descrip() {
+        return "Searchs for provided song/playlist and adds them to queue";
+    }
 }
 
 module.exports = play;

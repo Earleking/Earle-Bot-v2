@@ -6,7 +6,10 @@ class helloWorld extends bFunction {
         msg.channel.send("Hello World");
     }
     argsList() {
-        return "";
+        return "None";
+    }
+    descrip() {
+        return "Says Hello World";
     }
 }
 

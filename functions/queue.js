@@ -8,6 +8,9 @@ class queue extends bFunction {
     argsList() {
         return "None";
     }
+    descrip() {
+        return "Displays the songs currently in queue";
+    }
 }
 
 module.exports = queue;

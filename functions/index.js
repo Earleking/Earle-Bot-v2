@@ -6,3 +6,4 @@ module.exports.play = require('./play');
 module.exports.pause = require('./pause');
 module.exports.resume = require('./resume');
 module.exports.queue = require('./queue');
+module.exports.rps = require('./rps');

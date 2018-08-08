@@ -7,6 +7,9 @@ class summon extends bFunction {
     argsList() {
         return "None";
     }
+    descrip() {
+        return "Attempts to summon bot to current channel";
+    }
 }
 
 module.exports = summon;
