@@ -6,7 +6,6 @@ class imgur extends bFunction {
         if(args[0]) {
             search = args[0];
         }
-        console.log(search);
         extensions.iAPI.getImageFromSubReddit(search, (link) => {
             msg.channel.send(link);
         });
