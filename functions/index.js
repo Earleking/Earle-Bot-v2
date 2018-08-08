@@ -7,3 +7,4 @@ module.exports.pause = require('./pause');
 module.exports.resume = require('./resume');
 module.exports.queue = require('./queue');
 module.exports.rps = require('./rps');
+module.exports.imgur = require('./imgur');
