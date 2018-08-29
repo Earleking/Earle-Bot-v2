@@ -19,35 +19,18 @@ class play extends bFunction {
                 this.singleYtVideo(song, msg);
             }
             else {
-                var playlistId;
-                // ELse has other parameters like list for a playlist
-                for (i in params) {
-                    var param = params[i];
-                    try {
-                        if(param.split("=")[0] == "list") {
-                            // then get playlist id
-                            playlistId = param.split("=")[1];
-                        }
-                    } catch (error) {
-                        console.log(error);
-                        msg.channel.send("There was an error with the link");
-                        return;
-                    }
-                }
-                if(!playlistId) {
-                    // No list parameter was found
-                    msg.channel.send("Error with the link. Contact Earleking for help");
-                    return;
-                }
-                msg.channel.send("Adding playlist to queue");
-                this.YtPlaylist(playlistId, msg);
+                this.playPlaylist(params, msg);
             }
             
         }
         else {
             // is a name
-            msg.channel.send("Names to be implemented later");
+            this.playSongByName(song, msg)
         }
+    }
+
+    playSongByName(name, msg) {
+        
     }
 
     singleYtVideo(song, msg) {
@@ -86,6 +69,31 @@ class play extends bFunction {
             }
             // console.log("done");
         });
+    }
+
+    playPlaylist(params, msg) {
+        var playlistId;
+        // ELse has other parameters like list for a playlist
+        for (i in params) {
+            var param = params[i];
+            try {
+                if(param.split("=")[0] == "list") {
+                    // then get playlist id
+                    playlistId = param.split("=")[1];
+                }
+            } catch (error) {
+                console.log(error);
+                msg.channel.send("There was an error with the link");
+                return;
+            }
+        }
+        if(!playlistId) {
+            // No list parameter was found
+            msg.channel.send("Error with the link. Contact Earleking for help");
+            return;
+        }
+        msg.channel.send("Adding playlist to queue");
+        this.YtPlaylist(playlistId, msg);
     }
 
     argsList() {
