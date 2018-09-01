@@ -30,6 +30,14 @@ class play extends bFunction {
     }
 
     playSongByName(name, msg) {
+        var host = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoCategoryId=10&videoType=any&q="
+        request(host + name + "&key=" + process.env.GOOGLE_KEY, (err, res, data) => {
+            console.log(err);
+            data = JSON.parse(data);
+            console.log(data);
+            var song = "https://www.youtube.com/watch?v=" + data["items"][0]["id"]["videoId"];
+            this.singleYtVideo(song, msg);
+        });
         
     }
 
@@ -41,7 +49,7 @@ class play extends bFunction {
             ytdl.getInfo(song, (err, info) => {
                 console.log(err);
                 // Huh, not working right now? Could not extract signature deciphering actions error
-                file = ytdl.downloadFromInfo(info)
+                file = ytdl.downloadFromInfo(info);
                 console.log(info['title']);
                 extensions.musicPlayer.addSong(file, info['title'], msg);
             });
