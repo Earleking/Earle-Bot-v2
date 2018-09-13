@@ -36,8 +36,8 @@ class autoCatPics {
         setTimeout(() => {
             this.sendPics();
             this.sendPicsLoop();
-        }, 1000);
-        // 86400 seconds is one day
+        }, 60000);
+        // 8640000 is one day
     }
 
     sendPics() {   
