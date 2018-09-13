@@ -12,6 +12,7 @@ var commands = {};
 // actual stuff now
 client.on('ready', (msg) => {
     client.user.setPresence({ game: { name: 'The Game of Life', type: 0 } });
+    startStuff();
     console.log(`Logged on as ${client.user.tag}`);
 });
 
@@ -83,6 +84,13 @@ function addCommands() {
     for(i in functions) {
         commands[i] = new functions[i]();
     }
+}
+
+function startStuff() {
+    // start my cat sender
+    const extensions = require('./extensions/extensions');
+    extensions.catSender.setNewClient(client);
+    extensions.catSender.start();
 }
 
 addCommands();
