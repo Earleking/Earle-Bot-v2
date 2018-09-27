@@ -11,3 +11,5 @@ class bAutoFunction {
         return "Stop not implemented";
     }
 }
+
+module.exports = bAutoFunction;
